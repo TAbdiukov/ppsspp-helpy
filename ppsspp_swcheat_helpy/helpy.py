@@ -15,6 +15,11 @@ except ModuleNotFoundError:
     print("```")
     sys.exit(1)
 
+try:
+    from . import __app_name__, __version__
+except (ImportError, ModuleNotFoundError) as e:
+    __app_name__, __version__ = "ppsspp-swcheat-helpy"
+    __version__ = "0.1.0-local"
 
 class Helpy:
     """
@@ -274,7 +279,7 @@ class Helpy:
         return True
 
     def run(self):
-        print(self.PROGRAM_NAME + " greets you!")
+        print(f"{__app_name__} {__version__}")
         print("How to: Just copy a PSP address like 08801234 to the clipboard.")
         # Always show the acceptable range at startup
         self._print_acceptable_address_range()
