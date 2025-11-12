@@ -14,7 +14,7 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
   "Topic :: Games/Entertainment",
-  "Topic :: Utilities"
+  "Topic :: Utilities",
   "Topic :: Software Development :: Build Tools",
   "Topic :: Software Development :: Disassemblers",
   "Topic :: Security",
