@@ -1,6 +1,6 @@
 # ppsspp-cwcheat-helpy
 
-**cwCheat address rewriter for PSP/PPSSPP cheat lines.**  
+**cwCheat address rewriter for PSP/PPSSPP memory patch lines.**  
 Copies a PSP virtual address from your clipboard, converts it to the cwCheat 28-bit offset, and rewrites a cwCheat line while preserving opcode, values, and comments. It continuously watches your clipboard, prints the new line, and also copies it back to the clipboard.
 
 ---
