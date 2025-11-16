@@ -1,6 +1,6 @@
 # ppsspp-cwcheat-helpy
 
-[![GitHub](https://img.shields.io/badge/GitHub-TAbdiukov/ppsspp-cwcheat-helpy?logo=github)](https://github.com/pykeen/pykeen)
+[![GitHub](https://img.shields.io/badge/GitHub-TAbdiukov/ppsspp-cwcheat-helpy?logo=github)](https://img.shields.io/badge/GitHub-TAbdiukov/ppsspp-cwcheat-helpy?logo=github)
 
 [![PyPI – Version](https://img.shields.io/pypi/v/ppsspp-cwcheat-helpy.svg)](https://pypi.org/project/ppsspp-cwcheat-helpy) 
 
