@@ -1,5 +1,13 @@
 # ppsspp-cwcheat-helpy
 
+[![GitHub](https://img.shields.io/badge/GitHub-TAbdiukov/ppsspp-cwcheat-helpy?logo=github)](https://github.com/pykeen/pykeen)
+
+[![PyPI – Version](https://img.shields.io/pypi/v/ppsspp-cwcheat-helpy.svg)](https://pypi.org/project/ppsspp-cwcheat-helpy) 
+
+![Licence](https://img.shields.io/github/license/TAbdiukov/ppsspp-cwcheat-helpy)
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/tabdiukov)
+
 **cwCheat address rewriter for PSP/PPSSPP memory patch lines.**  
 Copies a PSP virtual address from your clipboard, converts it to the cwCheat 28-bit offset, and rewrites a cwCheat line while preserving opcode, values, and comments. It continuously watches your clipboard, prints the new line, and also copies it back to the clipboard.
 
