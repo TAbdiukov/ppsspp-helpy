@@ -19,7 +19,7 @@ try:
     from . import __app_name__, __version__
 except (ImportError, ModuleNotFoundError) as e:
     __app_name__ = "ppsspp-cwcheat-helpy"
-    __version__ = "0.1.0-local"
+    __version__ = "0.5.0-local"
 
 class Helpy:
     """
