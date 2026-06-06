@@ -18,12 +18,12 @@ except ModuleNotFoundError:
 try:
     from . import __app_name__, __version__
 except (ImportError, ModuleNotFoundError) as e:
-    __app_name__ = "ppsspp-cwcheat-helpy"
+    __app_name__ = "ppsspp-cwcheat-clippy"
     __version__ = "0.5.0-local"
 
-class Helpy:
+class Clippy:
     """
-    Helpy: cwCheat address rewriter.
+    Clippy: cwCheat address rewriter.
 
     Behavior:
       - On startup, optionally parse:
@@ -66,7 +66,7 @@ class Helpy:
     )
 
     def __init__(self):
-        self.PROGRAM_NAME = "Helpy"
+        self.PROGRAM_NAME = "Clippy"
         # Runtime state
         self.template_w1 = None
         self.template_w2 = None
@@ -183,7 +183,7 @@ class Helpy:
         self.template_w2 = 0x01234567         # placeholder value/params
         # Heuristic: 0xE => address in w2; others (incl. 0xD) => w1
         self.addr_slot = "w2" if op_nibble == 0xE else "w1"
-        self.comment = (comment or f"helpy-automated: opcode 0x{op_nibble:X} template").strip()
+        self.comment = (comment or f"clippy-automated: opcode 0x{op_nibble:X} template").strip()
         self.initialized = True
 
         op_desc = self._op_description(op_nibble)
@@ -239,7 +239,7 @@ class Helpy:
         """Fallback when no/invalid argument is provided."""
         self.template_w1 = self.OPCODE_EDIT_4BYTES  # 0x20000000 -> 0x2AAAAAAA when filled
         self.template_w2 = 0x01234567
-        self.comment = "helpy-automated: set address to 0x01234567"
+        self.comment = "clippy-automated: set address to 0x01234567"
         self.addr_slot = "w1"
         self.initialized = True
         return (
@@ -371,7 +371,7 @@ class Helpy:
 
 def main():
     """Entry point for console_script and `python -m`."""
-    Helpy().run()
+    Clippy().run()
 
 if __name__ == "__main__":
     main()

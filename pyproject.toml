@@ -3,7 +3,7 @@ requires = ["setuptools>=70", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ppsspp-cwcheat-helpy"
+name = "ppsspp-cwcheat-clippy"
 dynamic = ["version"]
 description = "cwCheat address rewriter for PSP/PPSSPP memory patch lines"
 readme = "README.md"
@@ -28,11 +28,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/TAbdiukov/ppsspp-cwcheat-helpy"
-Issues = "https://github.com/TAbdiukov/ppsspp-cwcheat-helpy/issues"
+Homepage = "https://github.com/TAbdiukov/ppsspp-cwcheat-clippy"
+Issues = "https://github.com/TAbdiukov/ppsspp-cwcheat-clippy/issues"
 
 [project.scripts]
-ppsspp-cwcheat-helpy = "ppsspp_cwcheat_helpy.helpy:main"
+ppsspp-cwcheat-clippy = "ppsspp_cwcheat_clippy.clippy:main"
 
 [tool.setuptools.dynamic]
-version = { attr = "ppsspp_cwcheat_helpy.__version__" }
+version = { attr = "ppsspp_cwcheat_clippy.__version__" }

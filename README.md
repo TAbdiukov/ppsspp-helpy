@@ -1,14 +1,14 @@
-# ppsspp-cwcheat-helpy
+# ppsspp-cwcheat-clippy
 
-[![GitHub](https://img.shields.io/badge/GitHub-TAbdiukov/ppsspp--cwcheat--helpy-black?logo=github)](https://github.com/TAbdiukov/ppsspp-cwcheat-helpy)
-[![PyPI Version](https://img.shields.io/pypi/v/ppsspp-cwcheat-helpy.svg)](https://pypi.org/project/ppsspp-cwcheat-helpy)
-![License](https://img.shields.io/github/license/TAbdiukov/ppsspp-cwcheat-helpy)
+[![GitHub](https://img.shields.io/badge/GitHub-TAbdiukov/ppsspp--cwcheat--clippy-black?logo=github)](https://github.com/TAbdiukov/ppsspp-cwcheat-clippy)
+[![PyPI Version](https://img.shields.io/pypi/v/ppsspp-cwcheat-clippy.svg)](https://pypi.org/project/ppsspp-cwcheat-clippy)
+![License](https://img.shields.io/github/license/TAbdiukov/ppsspp-cwcheat-clippy)
 
 [![buymeacoffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tabdiukov)
 
 **cwCheat address rewriter for PSP/PPSSPP memory patch lines.**
 
-Helpy watches your clipboard for PSP virtual addresses such as `08801234`, converts them to cwCheat’s 28-bit offset, rewrites a cwCheat line template, prints the result, and copies it back to your clipboard.
+Clippy watches your clipboard for PSP virtual addresses such as `08801234`, converts them to cwCheat’s 28-bit offset, rewrites a cwCheat line template, prints the result, and copies it back to your clipboard.
 
 ## Table of contents
 
@@ -37,10 +37,10 @@ Use this when you are finding addresses in PPSSPP or on hardware and want to kee
 Install from PyPI:
 
 ```bash
-pip install ppsspp-cwcheat-helpy
+pip install ppsspp-cwcheat-clippy
 ```
 
-Helpy uses `pyperclip`, which is installed with the package. On Linux, you may also need a clipboard backend:
+Clippy uses `pyperclip`, which is installed with the package. On Linux, you may also need a clipboard backend:
 
 * Wayland: `wl-clipboard`
 * X11: `xclip` or `xsel`
@@ -50,15 +50,15 @@ Windows and macOS usually need no extra clipboard utility.
 ## Quick start
 
 ```bash
-ppsspp-cwcheat-helpy
+ppsspp-cwcheat-clippy
 ```
 
-Helpy prints the app version, accepted address range, active template, and a preview. With no argument, it uses a constant 32-bit write (`0x2`) with the address in the first word.
+Clippy prints the app version, accepted address range, active template, and a preview. With no argument, it uses a constant 32-bit write (`0x2`) with the address in the first word.
 
-Copy `08801234`; Helpy prints and copies:
+Copy `08801234`; Clippy prints and copies:
 
 ```text
-_L 0x20001234 0x01234567 // helpy-automated: set address to 0x01234567
+_L 0x20001234 0x01234567 // clippy-automated: set address to 0x01234567
 ```
 
 Stop with **Ctrl+C**.
@@ -90,7 +90,7 @@ E // skip if ==
 
 A single hex nibble chooses the code family. The second word starts as `0x01234567`; for `0xE`, the address goes in the second word, otherwise in the first.
 
-If no argument is provided, or an unrecognised argument is provided, Helpy uses the default `0x2` template. A recognised line with no replaceable address field exits with an error.
+If no argument is provided, or an unrecognised argument is provided, Clippy uses the default `0x2` template. A recognised line with no replaceable address field exits with an error.
 
 ## Address math & valid range
 
@@ -105,7 +105,7 @@ Clipboard input must be 7-8 hex digits, optionally prefixed with `0x`. Invalid a
 
 ## Template detection
 
-Helpy uses heuristics to decide where to place the 28-bit address field (`AAAAAAA`):
+Clippy uses heuristics to decide where to place the 28-bit address field (`AAAAAAA`):
 
 | Opcode top nibble | Meaning                     | Address goes to                   |
 | ----------------- | --------------------------- | ---------------------------------- |
@@ -121,26 +121,26 @@ Helpy uses heuristics to decide where to place the 28-bit address field (`AAAAAA
 | `0xE`             | Conditional (multi-skip)    | **w2** (top nibble typically 0..3) |
 | other             | Misc/other                  | best effort                        |
 
-For full-line templates, Helpy preserves the opcode, parameters, values, and `// comment`, and replaces only the detected address field. For `0xD`, it rewrites the first-word address only.
+For full-line templates, Clippy preserves the opcode, parameters, values, and `// comment`, and replaces only the detected address field. For `0xD`, it rewrites the first-word address only.
 
 ## Examples
 
 ### Default template
 
 ```bash
-ppsspp-cwcheat-helpy
+ppsspp-cwcheat-clippy
 ```
 
 Clipboard: `08801234`
 
 ```text
-_L 0x20001234 0x01234567 // helpy-automated: set address to 0x01234567
+_L 0x20001234 0x01234567 // clippy-automated: set address to 0x01234567
 ```
 
 ### Full cwCheat line as template
 
 ```bash
-ppsspp-cwcheat-helpy "_L 0x2003AD01 0x77777777 // speed hack 1"
+ppsspp-cwcheat-clippy "_L 0x2003AD01 0x77777777 // speed hack 1"
 ```
 
 Clipboard: `0x08804567`
@@ -152,7 +152,7 @@ _L 0x20004567 0x77777777 // speed hack 1
 ### Opcode-only template for `0xE`
 
 ```bash
-ppsspp-cwcheat-helpy "E // skip if =="
+ppsspp-cwcheat-clippy "E // skip if =="
 ```
 
 Clipboard: `08801234`
@@ -173,7 +173,7 @@ Clipboard: `0x087FFFFF`
 
 - **Nothing happens when I copy an address**: use `088xxxxx` ... `187xxxxx` or `0x...`, and copy it again if the clipboard did not change.
 - **Linux clipboard errors**: install `wl-clipboard` for Wayland, or `xclip`/`xsel` for X11.
-- **Clipboard content gets overwritten**: expected; Helpy copies the generated cheat line for quick pasting.
+- **Clipboard content gets overwritten**: expected; Clippy copies the generated cheat line for quick pasting.
 
 ## Credits
 
