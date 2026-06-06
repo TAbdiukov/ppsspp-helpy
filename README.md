@@ -34,17 +34,13 @@ Use this when you are finding addresses in PPSSPP or on hardware and want to kee
 
 ## Installation
 
-### From PyPI
+Install from PyPI:
 
 ```bash
 pip install ppsspp-cwcheat-helpy
 ```
 
-### Clipboard support
-
-Helpy uses `pyperclip` on all platforms. It is listed in `requirements.txt` and installed with the package.
-
-On Linux, `pyperclip` may also need a clipboard backend:
+Helpy uses `pyperclip`, which is installed with the package. On Linux, you may also need a clipboard backend:
 
 * Wayland: `wl-clipboard`
 * X11: `xclip` or `xsel`
