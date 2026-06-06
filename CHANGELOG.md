@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.5.2
+## 0.6.0
 
 - Update readme
 - Rename project from `ppsspp-cwcheat-helpy` to `ppsspp-cwcheat-clippy`
