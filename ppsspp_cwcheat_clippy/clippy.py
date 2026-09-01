@@ -293,7 +293,7 @@ class Clippy:
         min_addr = self.PSP_BASE
         max_addr = self.PSP_BASE + 0x0FFFFFFF  # inclusive
         print(f"Acceptable cwCheat address range: {self._hex32(min_addr)} - {self._hex32(max_addr)} (inclusive)")
-        print("Accepted input formats: 08801234 or 0x08801234")
+        print("Accepted input formats: 08801234, 0x08801234, or zero-padded equivalents")
 
     # --------------------------- main loop -----------------------------
 
@@ -302,8 +302,8 @@ class Clippy:
         if not s:
             return False
 
-        # Accept '08801234' or '0x08801234' (upper/lower ok)
-        m = re.fullmatch(r"(?:0x)?([0-9a-fA-F]{7,8})", s)
+        # Accept '08801234', '0x08801234', or zero-padded equivalents
+        m = re.fullmatch(r"(?:0x)?0*([0-9a-fA-F]{7,8})", s)
         if not m:
             return False
 

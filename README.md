@@ -101,7 +101,7 @@ offset = PSP - 0x08800000
 valid PSP range = 0x08800000 .. 0x187FFFFF (inclusive)
 ```
 
-Clipboard input must be 7-8 hex digits, optionally prefixed with `0x`. Invalid addresses are reported, and the watcher keeps running.
+Clipboard input must contain a 7-8 digit hex address, optionally prefixed with `0x` and padded with leading zeroes. Invalid addresses are reported, and the watcher keeps running.
 
 ## Template detection
 
